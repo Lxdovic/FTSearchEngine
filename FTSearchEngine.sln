@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FTSearchEngine", "FTSearchEngine\FTSearchEngine.csproj", "{125E3183-DFF3-46C2-94A4-B640DB58F75F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FTS.Tests", "FTS.Tests\FTS.Tests.csproj", "{0332DF01-939C-4308-B824-986CC74B7FB3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{125E3183-DFF3-46C2-94A4-B640DB58F75F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{125E3183-DFF3-46C2-94A4-B640DB58F75F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{125E3183-DFF3-46C2-94A4-B640DB58F75F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{125E3183-DFF3-46C2-94A4-B640DB58F75F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0332DF01-939C-4308-B824-986CC74B7FB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0332DF01-939C-4308-B824-986CC74B7FB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0332DF01-939C-4308-B824-986CC74B7FB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0332DF01-939C-4308-B824-986CC74B7FB3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

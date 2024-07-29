@@ -14,12 +14,6 @@ public static class Levenshtein {
             table[i, j] = new[] { table[i - 1, j] + 1, table[i, j - 1] + 1, table[i - 1, j - 1] + cost }.Min();
         }
 
-        for (var i = 0; i <= a.Length; i++) {
-            for (var j = 0; j <= b.Length; j++) Console.Write($" {table[i, j]} ");
-
-            Console.WriteLine();
-        }
-
         return table[a.Length, b.Length];
     }
 }

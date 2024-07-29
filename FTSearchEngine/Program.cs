@@ -1,12 +1,19 @@
-﻿using static FTSearchEngine.TokenizerNS.Tokenizer;
+﻿using FTSearchEngine.Indexing;
+using static FTSearchEngine.TokenizerNS.Tokenizer;
 
 namespace FTSearchEngine;
 
-public class Program {
+public static class Program {
     public static void Main() {
-        var tokens = Tokenize("english", "It's alive! It's alive!");
-
-        foreach (var token in tokens)
-            Console.WriteLine(token);
+        var invertedIndex = new InvertedIndex();
+        
+        invertedIndex.IndexDocument("Hello, world!");
+        invertedIndex.IndexDocument("Hello, Jacob!");
+        invertedIndex.IndexDocument("Goodbye!");
+        
+        invertedIndex.Search("Hello").ForEach(result => {
+            Console.WriteLine($"Word: {result.word}");
+            Console.WriteLine($"Document IDs: {string.Join(", ", result.index.DocumentIds)}");
+        });
     }
 }

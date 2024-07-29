@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class French {
-    public static List<string> StopWords { get; } = [
+public class French : Language {
+    public static string CountryCode { get; } = "fr";
+
+    public override List<string> StopWords { get; } = [
         "au",
         "aux",
         "avec",

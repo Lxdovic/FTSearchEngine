@@ -1,41 +1,41 @@
 using System.Text.RegularExpressions;
+using FTSearchEngine.Tokenizer.Languages;
 
-namespace FTSearchEngine.Tokenizer.Languages;
+namespace FTSearchEngine.TokenizerNS.LanguagesNS;
 
 public static class Languages {
-    public static readonly Dictionary<string, string> Stemmers = new() {
-        { "arabic", "ar" },
-        { "armenian", "am" },
-        { "bulgarian", "bg" },
-        { "danish", "dk" },
-        { "dutch", "nl" },
-        { "english", "en" },
-        { "finnish", "fi" },
-        { "french", "fr" },
-        { "german", "de" },
-        { "greek", "gr" },
-        { "hungarian", "hu" },
-        { "indian", "in" },
-        { "indonesian", "id" },
-        { "irish", "ie" },
-        { "italian", "it" },
-        { "lithuanian", "lt" },
-        { "nepali", "np" },
-        { "norwegian", "no" },
-        { "portuguese", "pt" },
-        { "romanian", "ro" },
-        { "russian", "ru" },
-        { "serbian", "rs" },
-        { "slovenian", "ru" },
-        { "spanish", "es" },
-        { "swedish", "se" },
-        { "tamil", "ta" },
-        { "turkish", "tr" },
-        { "ukrainian", "uk" },
-        { "sanskrit", "sk" }
+    public static readonly Dictionary<string, Language> SupportedLanguages = new() {
+        { "arabic", new Arabic() },
+        { "armenian", new Armenian() },
+        { "bulgarian", new Bulgarian() },
+        { "danish", new Danish() },
+        { "dutch", new Dutch() },
+        { "english", new English() },
+        { "finnish", new Finnish() },
+        { "french", new French() },
+        { "german", new German() },
+        { "greek", new Greek() },
+        { "hungarian", new Hungarian() },
+        { "indian", new Indian() },
+        { "indonesian", new Indonesian() },
+        { "irish", new Irish() },
+        { "italian", new Italian() },
+        { "lithuanian", new Lithuanian() },
+        { "nepali", new Nepali() },
+        { "norwegian", new Norwegian() },
+        { "portuguese", new Portuguese() },
+        { "romanian", new Romanian() },
+        { "russian", new Russian() },
+        { "serbian", new Serbian() },
+        { "spanish", new Spanish() },
+        { "swedish", new Swedish() },
+        { "tamil", new Tamil() },
+        { "turkish", new Turkish() },
+        { "ukrainian", new Ukrainian() },
+        { "sanskrit", new Sanskrit() }
     };
 
-    private static readonly Dictionary<string, Regex?> Splitters = new() {
+    public static readonly Dictionary<string, Regex> Splitters = new() {
         { "dutch", new Regex("[^A-Za-zàèéìòóù0-9_'-]+", RegexOptions.Multiline | RegexOptions.IgnoreCase) },
         { "english", new Regex("[^A-Za-zàèéìòóù0-9_'-]+", RegexOptions.Multiline | RegexOptions.IgnoreCase) },
         { "french", new Regex("[^a-z0-9äâàéèëêïîöôùüûœç-]+", RegexOptions.Multiline | RegexOptions.IgnoreCase) },
@@ -61,15 +61,8 @@ public static class Languages {
         { "greek", new Regex("[^a-z0-9α-ωά-ώ]+", RegexOptions.Multiline | RegexOptions.IgnoreCase) },
         { "indonesian", new Regex("[^a-z0-9]+", RegexOptions.Multiline | RegexOptions.IgnoreCase) },
         { "ukrainian", new Regex("[^a-z0-9а-яА-ЯіїєІЇЄ]+", RegexOptions.Multiline | RegexOptions.IgnoreCase) },
-        { "slovenian", new Regex("[^a-z0-9čžšČŽŠ]+", RegexOptions.Multiline | RegexOptions.IgnoreCase) },
         { "bulgarian", new Regex("[^a-z0-9а-яА-Я]+", RegexOptions.Multiline | RegexOptions.IgnoreCase) },
         { "tamil", new Regex("[^a-z0-9அ-ஹ]+", RegexOptions.Multiline | RegexOptions.IgnoreCase) },
         { "sanskrit", new Regex("[^a-z0-9A-Zāīūṛḷṃṁḥśṣṭḍṇṅñḻḹṝ]+", RegexOptions.Multiline | RegexOptions.IgnoreCase) }
     };
-
-    private static readonly List<string> SupportedLanguages = Stemmers.Keys.ToList();
-
-    public static void GetSplitter(string language, out Regex? splitter) {
-        Splitters.TryGetValue(language, out splitter);
-    }
 }

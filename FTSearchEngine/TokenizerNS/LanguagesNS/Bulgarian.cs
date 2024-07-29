@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Bulgarian {
-    public static List<string> StopWords { get; } = [
+public class Bulgarian : Language {
+    public static string CountryCode { get; } = "bg";
+
+    public override List<string> StopWords { get; } = [
         "а",
         "автентичен",
         "аз",

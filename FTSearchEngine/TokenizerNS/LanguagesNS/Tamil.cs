@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Tamil {
-    public static List<string> StopWords { get; } = [
+public class Tamil : Language {
+    public static string CountryCode { get; } = "ta";
+
+    public override List<string> StopWords { get; } = [
         "ஒரு",
         "என்று",
         "மற்றும்",

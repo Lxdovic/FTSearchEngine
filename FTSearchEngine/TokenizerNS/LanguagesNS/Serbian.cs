@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Serbian {
-    public static List<string> StopWords { get; } = [
+public class Serbian : Language {
+    public static string CountryCode { get; } = "rs";
+
+    public override List<string> StopWords { get; } = [
         "baš",
         "bez",
         "biæe",

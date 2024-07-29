@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Hungarian {
-    public static List<string> StopWords { get; } = [
+public class Hungarian : Language {
+    public static string CountryCode { get; } = "hu";
+
+    public override List<string> StopWords { get; } = [
         "a",
         "abba",
         "abban",

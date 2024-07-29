@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Swedish {
-    public static List<string> StopWords { get; } = [
+public class Swedish : Language {
+    public static string CountryCode { get; } = "se";
+
+    public override List<string> StopWords { get; } = [
         "och",
         "det",
         "att",

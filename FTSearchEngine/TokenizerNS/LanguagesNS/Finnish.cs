@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Finnish {
-    public static List<string> StopWords { get; } = [
+public class Finnish : Language {
+    public static string CountryCode { get; } = "fi";
+
+    public override List<string> StopWords { get; } = [
         "olla",
         "olen",
         "olet",

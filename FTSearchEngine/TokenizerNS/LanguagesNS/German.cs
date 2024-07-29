@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class German {
-    public static List<string> StopWords { get; } = [
+public class German : Language {
+    public static string CountryCode { get; } = "de";
+
+    public override List<string> StopWords { get; } = [
         "aber",
         "alle",
         "allem",

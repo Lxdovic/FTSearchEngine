@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Russian {
-    public static List<string> StopWords { get; } = [
+public class Russian : Language {
+    public static string CountryCode { get; } = "ru";
+
+    public override List<string> StopWords { get; } = [
         "и",
         "в",
         "во",

@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class English {
-    public static List<string> StopWords { get; } = [
+public class English : Language {
+    public static string CountryCode { get; } = "en";
+
+    public override List<string> StopWords { get; } = [
         "i",
         "me",
         "my",

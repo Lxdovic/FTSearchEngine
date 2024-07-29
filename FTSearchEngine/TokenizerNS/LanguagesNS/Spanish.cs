@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Spanish {
-    public static List<string> StopWords { get; } = [
+public class Spanish : Language {
+    public static string CountryCode { get; } = "es";
+
+    public override List<string> StopWords { get; } = [
         "a",
         "actualmente",
         "acuerdo",

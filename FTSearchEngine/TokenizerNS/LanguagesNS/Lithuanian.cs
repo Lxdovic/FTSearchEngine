@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Lithuanian {
-    public static List<string> StopWords { get; } = [
+public class Lithuanian : Language {
+    public static string CountryCode { get; } = "lt";
+
+    public override List<string> StopWords { get; } = [
         "á",
         "ákypai",
         "ástriþai",

@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Romanian {
-    public static List<string> StopWords { get; } = [
+public class Romanian : Language {
+    public static string CountryCode { get; } = "ro";
+
+    public override List<string> StopWords { get; } = [
         "acea",
         "aceasta",
         "această",

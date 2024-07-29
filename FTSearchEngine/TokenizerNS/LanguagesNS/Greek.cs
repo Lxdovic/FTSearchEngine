@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Greek {
-    public static List<string> StopWords { get; } = [
+public class Greek : Language {
+    public static string CountryCode { get; } = "gr";
+
+    public override List<string> StopWords { get; } = [
         "αλλα",
         "αν",
         "αντι",

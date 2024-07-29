@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Indian {
-    public static List<string> StopWords { get; } = [
+public class Indian : Language {
+    public static string CountryCode { get; } = "in";
+
+    public override List<string> StopWords { get; } = [
         "पर",
         "इन",
         "वह",

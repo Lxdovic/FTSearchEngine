@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Norwegian {
-    public static List<string> StopWords { get; } = [
+public class Norwegian : Language {
+    public static string CountryCode { get; } = "no";
+
+    public override List<string> StopWords { get; } = [
         "og",
         "i",
         "jeg",

@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Indonesian {
-    public static List<string> StopWords { get; } = [
+public class Indonesian : Language {
+    public static string CountryCode { get; } = "id";
+
+    public override List<string> StopWords { get; } = [
         "ada",
         "adalah",
         "adanya",

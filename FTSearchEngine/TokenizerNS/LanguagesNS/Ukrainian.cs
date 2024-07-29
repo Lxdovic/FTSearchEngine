@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Ukrainian {
-    public static List<string> StopWords { get; } = [
+public class Ukrainian : Language {
+    public static string CountryCode { get; } = "uk";
+
+    public override List<string> StopWords { get; } = [
         "з",
         "й",
         "що",

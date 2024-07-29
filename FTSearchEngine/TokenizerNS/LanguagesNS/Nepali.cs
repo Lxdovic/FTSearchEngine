@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Nepali {
-    public static List<string> StopWords { get; } = [
+public class Nepali : Language {
+    public static string CountryCode { get; } = "np";
+
+    public override List<string> StopWords { get; } = [
         "अक्सर",
         "अगाडि",
         "अझै",

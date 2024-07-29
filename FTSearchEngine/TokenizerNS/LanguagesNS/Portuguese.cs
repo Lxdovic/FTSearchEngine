@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Portugese {
-    public static List<string> StopWords { get; } = [
+public class Portuguese : Language {
+    public static string CountryCode { get; } = "pt";
+
+    public override List<string> StopWords { get; } = [
         "de",
         "a",
         "o",

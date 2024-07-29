@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Italian {
-    public static List<string> StopWords { get; } = [
+public class Italian : Language {
+    public static string CountryCode { get; } = "it";
+
+    public override List<string> StopWords { get; } = [
         "ad",
         "al",
         "allo",

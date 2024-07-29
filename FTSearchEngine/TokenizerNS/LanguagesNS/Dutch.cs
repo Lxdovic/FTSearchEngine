@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Dutch {
-    public static List<string> StopWords { get; } = [
+public class Dutch : Language {
+    public static string CountryCode { get; } = "nl";
+
+    public override List<string> StopWords { get; } = [
         "de",
         "en",
         "van",

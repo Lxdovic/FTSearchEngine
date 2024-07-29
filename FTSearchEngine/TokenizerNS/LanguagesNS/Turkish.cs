@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Turkish {
-    public static List<string> StopWords { get; } = [
+public class Turkish : Language {
+    public static string CountryCode { get; } = "tr";
+
+    public override List<string> StopWords { get; } = [
         "acaba",
         "acep",
         "adeta",

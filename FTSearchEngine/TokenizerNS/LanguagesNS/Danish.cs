@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Danish {
-    public static List<string> StopWords { get; } = [
+public class Danish : Language {
+    public static string CountryCode { get; } = "dk";
+
+    public override List<string> StopWords { get; } = [
         "og",
         "i",
         "jeg",

@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Armenian {
-    public static List<string> StopWords { get; } = [
+public class Armenian : Language {
+    public static string CountryCode { get; } = "am";
+
+    public override List<string> StopWords { get; } = [
         "այդ",
         "այլ",
         "այն",

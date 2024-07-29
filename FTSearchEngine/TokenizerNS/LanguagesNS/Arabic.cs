@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Arabic {
-    public static List<string> StopWords { get; } = [
+public class Arabic : Language {
+    public static string CountryCode { get; } = "ar";
+
+    public override List<string> StopWords { get; } = [
         "،",
         "آض",
         "آمينَ",

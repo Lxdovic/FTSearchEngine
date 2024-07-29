@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Sanskrit {
-    public static List<string> StopWords { get; } = [
+public class Sanskrit : Language {
+    public static string CountryCode { get; } = "sk";
+
+    public override List<string> StopWords { get; } = [
         "ahaṃ",
         "tava",
         "tvayi",

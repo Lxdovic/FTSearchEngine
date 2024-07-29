@@ -1,7 +1,9 @@
 namespace FTSearchEngine.Tokenizer.Languages;
 
-public static class Irish {
-    public static List<string> StopWords { get; } = [
+public class Irish : Language {
+    public static string CountryCode { get; } = "ie";
+
+    public override List<string> StopWords { get; } = [
         "a",
         "ach",
         "ag",

@@ -10,14 +10,12 @@ public static class Tokenizer {
         Languages.Splitters.TryGetValue(language, out var splitter);
         if (splitter == null) throw new Exception($"Splitter not found for language {language}");
 
-        var tokens = new List<string>();
 
-        splitter
+        return splitter
             .Split(sentence)
             .Where(token => !lang.StopWords.Contains(token))
-            .ToList()
-            .ForEach(token => tokens.Add(lang.Stemmer.Stem(token)));
-
-        return tokens.Distinct().ToArray();
+            .Select(token => lang.Stemmer.Stem(token))
+            .Distinct()
+            .ToArray();
     }
 }

@@ -8,8 +8,8 @@ public static class Tokenizer {
         var sentence = input.ToLower();
 
         Languages.Splitters.TryGetValue(language, out var splitter);
+        
         if (splitter == null) throw new Exception($"Splitter not found for language {language}");
-
 
         return splitter
             .Split(sentence)

@@ -1,7 +1,11 @@
-namespace FTSearchEngine.Lang;
+using FTSearchEngine.Stemming;
+using Snowball;
+
+namespace FTSearchEngine.Tokenizing.Lang;
 
 public class Turkish : Language {
     public static string CountryCode { get; } = "tr";
+    public override Stemmer Stemmer { get; } = new TurkishStemmer();
 
     public override List<string> StopWords { get; } = [
         "acaba",

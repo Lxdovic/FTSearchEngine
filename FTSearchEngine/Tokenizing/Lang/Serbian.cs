@@ -1,7 +1,11 @@
-namespace FTSearchEngine.Lang;
+using FTSearchEngine.Stemming;
+using Snowball;
+
+namespace FTSearchEngine.Tokenizing.Lang;
 
 public class Serbian : Language {
     public static string CountryCode { get; } = "rs";
+    public override Stemmer Stemmer { get; } = new SerbianStemmer();
 
     public override List<string> StopWords { get; } = [
         "baš",

@@ -1,7 +1,11 @@
-namespace FTSearchEngine.Lang;
+using FTSearchEngine.Stemming;
+using Snowball;
+
+namespace FTSearchEngine.Tokenizing.Lang;
 
 public class Russian : Language {
     public static string CountryCode { get; } = "ru";
+    public override Stemmer Stemmer { get; } = new RussianStemmer();
 
     public override List<string> StopWords { get; } = [
         "и",

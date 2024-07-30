@@ -1,7 +1,11 @@
-namespace FTSearchEngine.Lang;
+using FTSearchEngine.Stemming;
+using Snowball;
+
+namespace FTSearchEngine.Tokenizing.Lang;
 
 public class Dutch : Language {
     public static string CountryCode { get; } = "nl";
+    public override Stemmer Stemmer { get; } = new DutchStemmer();
 
     public override List<string> StopWords { get; } = [
         "de",

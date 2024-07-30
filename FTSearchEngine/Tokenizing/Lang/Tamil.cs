@@ -1,7 +1,11 @@
-namespace FTSearchEngine.Lang;
+using FTSearchEngine.Stemming;
+using Snowball;
+
+namespace FTSearchEngine.Tokenizing.Lang;
 
 public class Tamil : Language {
     public static string CountryCode { get; } = "ta";
+    public override Stemmer Stemmer { get; } = new TamilStemmer();
 
     public override List<string> StopWords { get; } = [
         "ஒரு",

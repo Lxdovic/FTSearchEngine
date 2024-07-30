@@ -1,7 +1,11 @@
-namespace FTSearchEngine.Lang;
+using FTSearchEngine.Stemming;
+using Snowball;
+
+namespace FTSearchEngine.Tokenizing.Lang;
 
 public class Swedish : Language {
     public static string CountryCode { get; } = "se";
+    public override Stemmer Stemmer { get; } = new SwedishStemmer();
 
     public override List<string> StopWords { get; } = [
         "och",

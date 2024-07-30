@@ -1,7 +1,11 @@
-namespace FTSearchEngine.Lang;
+using FTSearchEngine.Stemming;
+using Snowball;
+
+namespace FTSearchEngine.Tokenizing.Lang;
 
 public class Hungarian : Language {
     public static string CountryCode { get; } = "hu";
+    public override Stemmer Stemmer { get; } = new HungarianStemmer();
 
     public override List<string> StopWords { get; } = [
         "a",

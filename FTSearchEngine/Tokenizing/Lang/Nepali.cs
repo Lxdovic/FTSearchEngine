@@ -1,7 +1,11 @@
-namespace FTSearchEngine.Lang;
+using FTSearchEngine.Stemming;
+using Snowball;
+
+namespace FTSearchEngine.Tokenizing.Lang;
 
 public class Nepali : Language {
     public static string CountryCode { get; } = "np";
+    public override Stemmer Stemmer { get; } = new NepaliStemmer();
 
     public override List<string> StopWords { get; } = [
         "अक्सर",

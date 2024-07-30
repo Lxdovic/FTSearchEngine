@@ -1,7 +1,11 @@
-namespace FTSearchEngine.Lang;
+using FTSearchEngine.Stemming;
+using Snowball;
+
+namespace FTSearchEngine.Tokenizing.Lang;
 
 public class Portuguese : Language {
     public static string CountryCode { get; } = "pt";
+    public override Stemmer Stemmer { get; } = new PortugueseStemmer();
 
     public override List<string> StopWords { get; } = [
         "de",

@@ -1,7 +1,11 @@
-namespace FTSearchEngine.Lang;
+using FTSearchEngine.Stemming;
+using Snowball;
+
+namespace FTSearchEngine.Tokenizing.Lang;
 
 public class Spanish : Language {
     public static string CountryCode { get; } = "es";
+    public override Stemmer Stemmer { get; } = new SpanishStemmer();
 
     public override List<string> StopWords { get; } = [
         "a",

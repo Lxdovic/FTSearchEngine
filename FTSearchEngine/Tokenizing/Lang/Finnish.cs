@@ -1,7 +1,11 @@
-namespace FTSearchEngine.Lang;
+using FTSearchEngine.Stemming;
+using Snowball;
+
+namespace FTSearchEngine.Tokenizing.Lang;
 
 public class Finnish : Language {
     public static string CountryCode { get; } = "fi";
+    public override Stemmer Stemmer { get; } = new FinnishStemmer();
 
     public override List<string> StopWords { get; } = [
         "olla",

@@ -1,7 +1,11 @@
-namespace FTSearchEngine.Lang;
+using FTSearchEngine.Stemming;
+using Snowball;
+
+namespace FTSearchEngine.Tokenizing.Lang;
 
 public class German : Language {
     public static string CountryCode { get; } = "de";
+    public override Stemmer Stemmer { get; } = new GermanStemmer();
 
     public override List<string> StopWords { get; } = [
         "aber",

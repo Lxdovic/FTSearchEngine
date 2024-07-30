@@ -1,7 +1,11 @@
-namespace FTSearchEngine.Lang;
+using FTSearchEngine.Stemming;
+using Snowball;
+
+namespace FTSearchEngine.Tokenizing.Lang;
 
 public class Greek : Language {
     public static string CountryCode { get; } = "gr";
+    public override Stemmer Stemmer { get; } = new GreekStemmer();
 
     public override List<string> StopWords { get; } = [
         "αλλα",

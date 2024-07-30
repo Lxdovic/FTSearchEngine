@@ -1,12 +1,11 @@
 using System.Text.RegularExpressions;
 
-namespace FTSearchEngine.Lang;
+namespace FTSearchEngine.Tokenizing.Lang;
 
 public static class Languages {
     public static readonly Dictionary<string, Language> SupportedLanguages = new() {
         { "arabic", new Arabic() },
         { "armenian", new Armenian() },
-        { "bulgarian", new Bulgarian() },
         { "danish", new Danish() },
         { "dutch", new Dutch() },
         { "english", new English() },
@@ -15,8 +14,6 @@ public static class Languages {
         { "german", new German() },
         { "greek", new Greek() },
         { "hungarian", new Hungarian() },
-        { "indian", new Indian() },
-        { "indonesian", new Indonesian() },
         { "irish", new Irish() },
         { "italian", new Italian() },
         { "lithuanian", new Lithuanian() },
@@ -30,8 +27,6 @@ public static class Languages {
         { "swedish", new Swedish() },
         { "tamil", new Tamil() },
         { "turkish", new Turkish() },
-        { "ukrainian", new Ukrainian() },
-        { "sanskrit", new Sanskrit() }
     };
 
     public static readonly Dictionary<string, Regex> Splitters = new() {
@@ -58,10 +53,7 @@ public static class Languages {
         { "indian", new Regex("[^a-z0-9अ-ह]+", RegexOptions.Multiline | RegexOptions.IgnoreCase) },
         { "armenian", new Regex("[^a-z0-9ա-ֆ]+", RegexOptions.Multiline | RegexOptions.IgnoreCase) },
         { "greek", new Regex("[^a-z0-9α-ωά-ώ]+", RegexOptions.Multiline | RegexOptions.IgnoreCase) },
-        { "indonesian", new Regex("[^a-z0-9]+", RegexOptions.Multiline | RegexOptions.IgnoreCase) },
-        { "ukrainian", new Regex("[^a-z0-9а-яА-ЯіїєІЇЄ]+", RegexOptions.Multiline | RegexOptions.IgnoreCase) },
         { "bulgarian", new Regex("[^a-z0-9а-яА-Я]+", RegexOptions.Multiline | RegexOptions.IgnoreCase) },
         { "tamil", new Regex("[^a-z0-9அ-ஹ]+", RegexOptions.Multiline | RegexOptions.IgnoreCase) },
-        { "sanskrit", new Regex("[^a-z0-9A-Zāīūṛḷṃṁḥśṣṭḍṇṅñḻḹṝ]+", RegexOptions.Multiline | RegexOptions.IgnoreCase) }
     };
 }

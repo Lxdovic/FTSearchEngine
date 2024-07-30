@@ -1,7 +1,11 @@
-namespace FTSearchEngine.Lang;
+using FTSearchEngine.Stemming;
+using Snowball;
+
+namespace FTSearchEngine.Tokenizing.Lang;
 
 public class Lithuanian : Language {
     public static string CountryCode { get; } = "lt";
+    public override Stemmer Stemmer { get; } = new LithuanianStemmer();
 
     public override List<string> StopWords { get; } = [
         "á",

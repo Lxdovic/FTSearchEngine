@@ -1,7 +1,11 @@
-namespace FTSearchEngine.Lang;
+using FTSearchEngine.Stemming;
+using Snowball;
+
+namespace FTSearchEngine.Tokenizing.Lang;
 
 public class Norwegian : Language {
     public static string CountryCode { get; } = "no";
+    public override Stemmer Stemmer { get; } = new NorwegianStemmer();
 
     public override List<string> StopWords { get; } = [
         "og",

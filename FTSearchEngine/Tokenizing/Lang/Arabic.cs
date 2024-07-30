@@ -1,8 +1,12 @@
-namespace FTSearchEngine.Lang;
+using FTSearchEngine.Stemming;
+using Snowball;
+
+namespace FTSearchEngine.Tokenizing.Lang;
 
 public class Arabic : Language {
     public static string CountryCode { get; } = "ar";
-
+    public override Stemmer Stemmer { get; } = new ArabicStemmer();
+    
     public override List<string> StopWords { get; } = [
         "،",
         "آض",

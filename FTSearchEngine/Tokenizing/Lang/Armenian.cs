@@ -1,7 +1,11 @@
-namespace FTSearchEngine.Lang;
+using FTSearchEngine.Stemming;
+using Snowball;
+
+namespace FTSearchEngine.Tokenizing.Lang;
 
 public class Armenian : Language {
     public static string CountryCode { get; } = "am";
+    public override Stemmer Stemmer { get; } = new ArmenianStemmer();
 
     public override List<string> StopWords { get; } = [
         "այդ",

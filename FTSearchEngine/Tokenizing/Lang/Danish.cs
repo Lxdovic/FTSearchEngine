@@ -1,7 +1,11 @@
-namespace FTSearchEngine.Lang;
+using FTSearchEngine.Stemming;
+using Snowball;
+
+namespace FTSearchEngine.Tokenizing.Lang;
 
 public class Danish : Language {
     public static string CountryCode { get; } = "dk";
+    public override Stemmer Stemmer { get; } = new DanishStemmer();
 
     public override List<string> StopWords { get; } = [
         "og",

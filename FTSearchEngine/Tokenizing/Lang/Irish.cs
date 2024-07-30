@@ -1,7 +1,11 @@
-namespace FTSearchEngine.Lang;
+using FTSearchEngine.Stemming;
+using Snowball;
+
+namespace FTSearchEngine.Tokenizing.Lang;
 
 public class Irish : Language {
     public static string CountryCode { get; } = "ie";
+    public override Stemmer Stemmer { get; } = new IrishStemmer();
 
     public override List<string> StopWords { get; } = [
         "a",

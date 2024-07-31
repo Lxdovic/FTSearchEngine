@@ -38,8 +38,6 @@ public class BkTree {
     }
 
     public void AddWord(string word) {
-        Console.WriteLine($"Adding word: {word}");
-
         if (Root == null) {
             Root = new BkNode(word);
 

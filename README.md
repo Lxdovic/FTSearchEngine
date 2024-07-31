@@ -1,8 +1,6 @@
 # FTSearchEngine
 
-FTSearchEngine is a simple search engine that can be used to search for a word 
-in one or many documents. It is part of a series of projects that I am working
-on to learn more about how algorithms we use in the everyday life works.
+FTSearchEngine is a simple Full-Text Search Engine. It is part of a series of projects that I am working on to learn more about how algorithms we use in the everyday life works.
 
 This work is based on the talk of [Michele Riva](https://github.com/micheleriva) 
 about [Writing a full-text search engine](https://www.youtube.com/watch?v=amSuoBKG1Ns)

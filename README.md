@@ -11,8 +11,8 @@ about [Writing a full-text search engine](https://www.youtube.com/watch?v=amSuoB
 
 When setting up the search engine, you typically give it a list of documents
 that you want to search in. The search engine will then index these documents
-using data structures like **Inverted Index** or **Trie** which allows for fast
-searching. Before indexing the documents, the search engine will process every
+using data structures like **Inverted Index** or **Bk-Tree** which allows for fast
+searching or typo-tolerant search. Before indexing the documents, the search engine will process every
 document in order to normalize it and keep only the meaningful information. 
 
 Tokenization is typically done in multiple steps.

@@ -1,11 +1,12 @@
 using FTSearchEngine.Indexing;
+using FTSearchEngine.Tokenizing.Lang;
 
 namespace FTS.Tests.Indexing;
 
 public class BkTreeTests {
     [Fact]
     public void BkTreeShouldReturnSimilarWords() {
-        var tree = new BkTree();
+        var tree = new BkTree(SupportedLanguages.English);
 
         tree.AddDocument("book books nook nooks b boo bo bookies");
         tree.AddWord("hook");

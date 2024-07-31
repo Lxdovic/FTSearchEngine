@@ -1,4 +1,5 @@
 using FTSearchEngine.Tokenizing;
+using FTSearchEngine.Tokenizing.Lang;
 
 namespace FTSearchEngine.Indexing;
 
@@ -28,11 +29,12 @@ public class BkNode(string word) {
     }
 }
 
-public class BkTree {
+public class BkTree(SupportedLanguages language) {
     private BkNode? Root { get; set; }
+    public SupportedLanguages Language { get; } = language;
 
     public void AddDocument(string document) {
-        var tokens = Tokenizer.Tokenize("english", document);
+        var tokens = Tokenizer.Tokenize(Language, document);
 
         foreach (var token in tokens) AddWord(token);
     }
@@ -62,7 +64,7 @@ public class BkTree {
     public List<KeyValuePair<string, int>> Search(string query, int maxDistance) {
         if (Root == null) return new List<KeyValuePair<string, int>>();
 
-        var tokens = Tokenizer.Tokenize("english", query);
+        var tokens = Tokenizer.Tokenize(Language, query);
 
         return tokens.SelectMany(token => SearchWord(token, maxDistance)).ToList();
     }

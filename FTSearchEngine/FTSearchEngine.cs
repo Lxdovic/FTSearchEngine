@@ -3,36 +3,33 @@ using FTSearchEngine.Tokenizing.Lang;
 
 namespace FTSearchEngine;
 
-public class FtSearchEngine {
-    // public InvertedIndex? InvertedIndex { get; }
+public class FtSearchEngine(SupportedLanguages language) {
+    private SupportedLanguages Language { get; } = language;
+    private BkTree? BkTree { get; } = new(language);
 
-    public FtSearchEngine(SupportedLanguages language /*, bool useFuzzySearch = true*/) {
-        Language = language;
-        // UseFuzzySearch = useFuzzySearch;
+    public void AddDocument<T>(T document, List<string>? fields = null) {
+        var documentFields = typeof(T).GetProperties();
 
-        /*if (useFuzzySearch)*/
-        BkTree = new BkTree(language);
-        // else InvertedIndex = new InvertedIndex(language);
+        foreach (var documentField in documentFields) {
+            var value = documentField.GetValue(document)?.ToString();
+
+            if (value == null) continue;
+
+            if (fields == null) {
+                BkTree?.AddDocument(value, document);
+                continue;
+            }
+
+            if (fields.Contains(documentField.Name)) BkTree?.AddDocument(value, document);
+        }
     }
 
-    public SupportedLanguages Language { get; }
-
-    // public bool UseFuzzySearch { get; }
-    public BkTree? BkTree { get; }
-
-    public void AddDocument(string document) {
-        /*if (UseFuzzySearch)*/
-        BkTree?.AddDocument(document);
-        // else InvertedIndex?.IndexDocument(document);
+    public void AddDocuments<T>(IEnumerable<T> documents, List<string>? fields = null) {
+        foreach (var document in documents) AddDocument(document, fields);
     }
 
-    public List<(string word, int score)> Search(string query, int maxDistance = 1) {
-        /*if (UseFuzzySearch)*/
-        return BkTree?
-                   .Search(query, maxDistance)
-                   .Select(result => (result.Key, result.Value))
-                   .ToList() ??
-               new List<(string Key, int Value)>();
-        // else return InvertedIndex?.Search(query).SelectMany(result => result.documents).ToList() ?? new();
+    public List<Result> Search(string query, int maxDistance = 1) {
+        return BkTree?.Search(query, maxDistance) ??
+               new List<Result>();
     }
 }

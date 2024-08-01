@@ -1,4 +1,4 @@
-namespace FTSearchEngine;
+namespace FTSearchEngine.Matching;
 
 public static class Levenshtein {
     public static int Distance(string a, string b) {

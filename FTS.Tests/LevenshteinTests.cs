@@ -1,4 +1,4 @@
-using FTSearchEngine;
+using FTSearchEngine.Matching;
 
 namespace FTS.Tests;
 

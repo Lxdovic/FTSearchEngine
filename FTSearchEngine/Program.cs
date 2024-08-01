@@ -6,21 +6,13 @@ using Newtonsoft.Json;
 namespace FTSearchEngine;
 
 public class User {
-    public User(string id, string firstName, string lastName, string email, string gender, string ipAddress) {
-        Id = id;
-        FirstName = firstName;
-        LastName = lastName;
-        Email = email;
+    public User(string name, string gender) {
+        Name = name;
         Gender = gender;
-        IpAddress = ipAddress;
     }
 
-    public string Id { get; set; }
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public string Email { get; set; }
+    public string Name { get; set; }
     public string Gender { get; set; }
-    public string IpAddress { get; set; }
 }
 
 public static class Program {
@@ -28,15 +20,15 @@ public static class Program {
 
     public static void Main() {
         Console.WriteLine("Loading mock data...");
-
+        
         var users = LoadMockData();
-
+        
         Console.WriteLine("Indexing mock data...");
-
+        
         if (users == null) return;
-
-        Engine.AddDocuments(users, ["FirstName", "Gender"]);
-
+        
+        Engine.AddDocuments(users.Slice(0, 3000), ["Name", "Gender"]);
+        
         Repl();
     }
 

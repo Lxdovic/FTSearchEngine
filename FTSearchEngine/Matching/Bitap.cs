@@ -1,12 +1,11 @@
 namespace FTSearchEngine.Matching;
 
 public static class Bitap {
-    public static int Fuzzy(string text, string pattern, int k)
-    {
-        int result = -1;
-        int m = pattern.Length;
+    public static int Fuzzy(string text, string pattern, int k) {
+        var result = -1;
+        var m = pattern.Length;
         int[] R;
-        int[] patternMask = new int[128];
+        var patternMask = new int[128];
         int i, d;
 
         if (string.IsNullOrEmpty(pattern)) return 0;
@@ -22,24 +21,21 @@ public static class Bitap {
         for (i = 0; i < m; ++i)
             patternMask[pattern[i]] &= ~(1 << i);
 
-        for (i = 0; i < text.Length; ++i)
-        {
-            int oldRd1 = R[0];
+        for (i = 0; i < text.Length; ++i) {
+            var oldRd1 = R[0];
 
             R[0] |= patternMask[text[i]];
             R[0] <<= 1;
 
-            for (d = 1; d <= k; ++d)
-            {
-                int tmp = R[d];
+            for (d = 1; d <= k; ++d) {
+                var tmp = R[d];
 
                 R[d] = (oldRd1 & (R[d] | patternMask[text[i]])) << 1;
                 oldRd1 = tmp;
             }
 
-            if (0 == (R[k] & (1 << m)))
-            {
-                result = (i - m) + 1;
+            if (0 == (R[k] & (1 << m))) {
+                result = i - m + 1;
                 break;
             }
         }
